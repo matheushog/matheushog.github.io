@@ -10,13 +10,18 @@ published: True
 
 ---
 
-👤 Brasileiro, Solteiro, 28 anos
-
-🏠 Taubaté/SP - Brasil
-
-📱(12) 99722-5759
-
-📬 [matheushog05@gmail.com](mailto:matheushog05@gmail.com)
+<table>
+  <tbody>
+    <tr>
+      <td>👤 Brasileiro, Solteiro, 28 anos</td>
+      <td>📱(12) 99722-5759</td>
+    </tr>
+    <tr>
+      <td>🏠 Taubaté/SP - Brasil</td>
+      <td>📬 <a href=”mailto:matheushog05@gmail.com”>matheushog05@gmail.com</td>
+    </tr>
+  </tbody>
+</table>
 
 ---
 
@@ -54,7 +59,7 @@ published: True
 ## **Idiomas**
 
 | Idioma | Leitura | Escrita | Conversação |
-| --- | --- | --- | --- |
+| :---: | :---: | :---: | :---: |
 | Português | Nativo | Nativo | Nativo |
 | Inglês | Avançado | Avançado | Avançado |
 | Francês | Avançado | Intermediário | Avançado |
