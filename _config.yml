@@ -24,7 +24,7 @@ title: Matheushog's site                         # the main title
 tagline: Documentação e portifolio de projetos diversos.   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  Site apresentando projetos de meu interesse.
+  Site apresentando projetos diversos de meu interesse.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: 'https://matheushog.github.io'
