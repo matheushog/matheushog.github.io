@@ -1,5 +1,5 @@
 ---
-title: Automoção da criação de tarefas no Ms Planner
+title: Automação da criação de tarefas no Ms Planner
 date: 2023-01-22 12:00 -03:00
 categories: [project]
 tags: [learning]
@@ -9,9 +9,9 @@ tags: [learning]
 
 O [Ms Planner](https://www.microsoft.com/pt-br/microsoft-365/business/task-management-software) é uma das ferramentas disponíveis para gestão de projetos, que se destaca pela gestão visual das atividades, possibilidade de colaboração e pela facilidade de uso.
 
-Uma das principais dificuldades encontradas (por mim) é adicionar tarefas de um projeto, que por motivo de facilidade de acesso, estão em um arquivo `.xlsx` do [Ms Excel](https://www.microsoft.com/pt-br/microsoft-365/excel). Muitas vezes há dezenas de linhas com atividades de diferentes datas de início e de conclusão, fato que dificulta a opção pela ferramenta Ms Planner, já que seria necessário adicionar as tarefas manualmente e uma a uma.
+Uma das principais dificuldades encontradas (por mim) é adicionar tarefas de um projeto, que por motivo de facilidade de acesso, estão em um arquivo `.xlsx` do [Ms Excel](https://www.microsoft.com/pt-br/microsoft-365/excel). Muitas vezes há dezenas de linhas com atividades de diferentes datas de início e de conclusão, fato que dificulta a opção pela ferramenta **Ms Planner**, já que seria necessário adicionar as tarefas manualmente e uma a uma.
 
-Recentemente descobri uma solução integrada, da própria [Microsoft](https://www.microsoft.com/pt-br), que facilita a criação de um quadro de tarefas no [Ms Planner](https://www.microsoft.com/pt-br/microsoft-365/business/task-management-software). Este poste visa apresentar uma maneira que descobri (depois de assistir a alguns tutoriais e ler a documentação da [Microsoft](https://www.microsoft.com/pt-br)) de automatizar o preenchimento de um quadro de tarefas no [Ms Planner](https://www.microsoft.com/pt-br/microsoft-365/business/task-management-software), utilizando a ferramenta [Power Automate](https://powerautomate.microsoft.com/pt-br/).
+Recentemente descobri uma solução integrada, da própria [Microsoft](https://www.microsoft.com/pt-br), que facilita a criação de um quadro de tarefas no [Ms Planner](https://www.microsoft.com/pt-br/microsoft-365/business/task-management-software). Este *post* visa apresentar uma maneira que descobri (depois de assistir a alguns tutoriais e ler a documentação da [Microsoft](https://www.microsoft.com/pt-br)) de automatizar o preenchimento de um quadro de tarefas no [Ms Planner](https://www.microsoft.com/pt-br/microsoft-365/business/task-management-software), utilizando a ferramenta [Power Automate](https://powerautomate.microsoft.com/pt-br/).
 
 ---
 
@@ -19,7 +19,7 @@ Recentemente descobri uma solução integrada, da própria [Microsoft](https://w
 
 Antes de começar a automação, é necessário ter em "mãos" a planilha com as tabelas necessárias (aqui referenciadas como `tabela 1` e `tabela 2`) e ter criado um quadro de tarefas no **Ms Planner** (aqui referenciado como `Teste`). 
 
-Para que o fluxo do **Power Automate** funcione, é necessário que as tabelas estejam criadas com a propriedade `Tabela` no **Ms Excel**, segue exemplo de como criar a tabela:
+Para que o fluxo do **Power Automate** funcione, é necessário que as tabelas estejam criadas com a propriedade `Tabela` no **Ms Excel**, segue um exemplo de como criar a tabela:
 
 - **(1)** Selecionar a tabela:
 <div style="text-align: center"><img src="/assets/images/automocao1.png"/></div>
@@ -32,8 +32,8 @@ Para que o fluxo do **Power Automate** funcione, é necessário que as tabelas e
 
 Com o arquivo criado (referenciado como `Planilha_Teste.xlsx`) teremos 2 (duas) tabelas:
 
-- `Tabela 1` - com os nomes dos *Buckets* do Planner;
-- `Tabela 2` - com as atividades de cada *Bucket* (com data de início e data de conclusão).
+- `Tabela 1` - com os nomes dos *Buckets* do **Ms Planner**;
+- `Tabela 2` - com as atividades de cada *Bucket* (com data de início e de conclusão).
 
 > OBS: Ao utilizarmos o fluxo do **Power Automate**, as datas colocadas no **Ms Excel** perdem 1 (um) dia quando são adicionadas no **Ms Planner** desta forma. Para prevenir isto, adicione 1 (um) dia nas datas adicionadas (data de início e de conclusão).
 
@@ -43,9 +43,13 @@ Com o arquivo criado (referenciado como `Planilha_Teste.xlsx`) teremos 2 (duas) 
 
 Para possibilitar a integração entre **Ms Planner** e **Ms Excel**, precisamos realizar o upload do arquivo que geramos anteriormente `Planilha_Teste.xlsx`.
 
-É possível fazer o upload de diversas formas como por exemplo: (i) utilizando as equipes do **Ms Teams**, (ii) o **Ms OneDrive** e (iii) o **Ms SharePoint**. Neste tutorial utilizou-se o **Ms OneDrive** por comodidade. 
+É possível fazer o upload de diversas formas como por exemplo:
 
-O upload realizado foi simplesmente adicionar o arquivo na raiz do **Ms OneDrive**, sem pasta expecífica.
+- (i) utilizando as equipes do **Ms Teams**;
+- (ii) o **Ms OneDrive** e
+- (iii) o **Ms SharePoint**. 
+
+Neste tutorial utilizou-se o **Ms OneDrive** por comodidade. Adicionou-se o arquivo `.xlsx` na raiz do **Ms OneDrive**, sem pasta específica.
 
 ---
 
@@ -53,7 +57,7 @@ O upload realizado foi simplesmente adicionar o arquivo na raiz do **Ms OneDrive
 
 Conforme tratado na etapa de preparação, temos na `Tabela 1` os nomes dos *Buckets* que serão criados no **Ms Planner**. 
 
-É possivel realizar esta etapa de maneira manual no próprio **Ms Planner**, mas para simular um projeto de diversas macro atividades, optou-se por realizar esta etapa de forma automatizada pelo **Power Automate**.
+É possível realizar esta etapa de maneira manual no próprio **Ms Planner**, mas para simular um projeto com diversas macro atividades, optou-se por realizar esta etapa de forma automatizada pelo **Power Automate**.
 
 - **(1)** Abra o aplicativo **Power Automate**.
 
