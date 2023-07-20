@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>tools on Matheushog&#39;s site</title>
+    <link>https://matheushog.github.io/tags/tools/</link>
+    <description>Recent content in tools on Matheushog&#39;s site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-BR</language>
+    <lastBuildDate>Fri, 30 Dec 2022 22:21:09 +0100</lastBuildDate><atom:link href="https://matheushog.github.io/tags/tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Forma de otimizar a criação de ATAs de reunião</title>
+      <link>https://matheushog.github.io/post/2022/ata/</link>
+      <pubDate>Fri, 30 Dec 2022 22:21:09 +0100</pubDate>
+      
+      <guid>https://matheushog.github.io/post/2022/ata/</guid>
+      <description>Elaboração de ATA de Reunião Uma das formas de formalizar os assuntos tratados de uma reunião de projeto é a elaboração de uma ATA de reunião.
+Há diversas formas de confeccionar uma Ata de reunião, uma das formas mais utilizadas é a elaboração de um documento .docx básico, com as anotações de algum participante da reunião (normalmente o gerente do projeto, ou o responsável pelo projeto), que será posteriormente encaminhado via e-mail para todos os participantes.</description>
+    </item>
+    
+  </channel>
+</rss>

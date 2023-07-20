@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Categories on Matheushog&#39;s site</title>
+    <link>https://matheushog.github.io/categories/</link>
+    <description>Recent content in Categories on Matheushog&#39;s site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-BR</language>
+    <lastBuildDate>Sat, 14 Jan 2023 23:06:35 +0100</lastBuildDate><atom:link href="https://matheushog.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>data</title>
+      <link>https://matheushog.github.io/categories/data/</link>
+      <pubDate>Sat, 14 Jan 2023 23:06:35 +0100</pubDate>
+      
+      <guid>https://matheushog.github.io/categories/data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>project</title>
+      <link>https://matheushog.github.io/categories/project/</link>
+      <pubDate>Fri, 30 Dec 2022 22:21:09 +0100</pubDate>
+      
+      <guid>https://matheushog.github.io/categories/project/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>code</title>
+      <link>https://matheushog.github.io/categories/code/</link>
+      <pubDate>Thu, 29 Dec 2022 22:13:01 +0100</pubDate>
+      
+      <guid>https://matheushog.github.io/categories/code/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

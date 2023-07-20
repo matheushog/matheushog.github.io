@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>python on Matheushog&#39;s site</title>
+    <link>https://matheushog.github.io/tags/python/</link>
+    <description>Recent content in python on Matheushog&#39;s site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-BR</language>
+    <lastBuildDate>Sat, 14 Jan 2023 23:06:35 +0100</lastBuildDate><atom:link href="https://matheushog.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Análise de dados com python</title>
+      <link>https://matheushog.github.io/post/2023/analise_dados/</link>
+      <pubDate>Sat, 14 Jan 2023 23:06:35 +0100</pubDate>
+      
+      <guid>https://matheushog.github.io/post/2023/analise_dados/</guid>
+      <description>Análise de dados com python A carreira de analista de dados ou engenheiro de dados, possui grande demanda no mercado nacional e internacional. Uma pesquisa de 2021 do site Canaltech, mostrou uma demanda de mais de 420 mil profissionais na área entre os anos de 2019 e 2024, sendo que no Brasil são formados 42 mil profissionais ano.
+Estes fatos me motivaram a buscar informações e assistar a algumas aulas disponíveis em plataformas como o youtube.</description>
+    </item>
+    
+  </channel>
+</rss>
