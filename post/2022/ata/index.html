@@ -21,6 +21,7 @@ Há diversas formas de confeccionar uma Ata de reunião, uma das formas mais uti
 <link rel="mask-icon" href="https://matheushog.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://matheushog.github.io/post/2022/ata/">
 <noscript>
     <style>
         #theme-toggle,
@@ -75,16 +76,16 @@ Há diversas formas de confeccionar uma Ata de reunião, uma das formas mais uti
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
-  "itemListElement": [, 
+  "itemListElement": [
     {
       "@type": "ListItem",
-      "position":  2 ,
+      "position":  1 ,
       "name": "Posts",
       "item": "https://matheushog.github.io/post/"
     }, 
     {
       "@type": "ListItem",
-      "position":  3 ,
+      "position":  2 ,
       "name": "Forma de otimizar a criação de ATAs de reunião",
       "item": "https://matheushog.github.io/post/2022/ata/"
     }
@@ -137,7 +138,7 @@ Há diversas formas de confeccionar uma Ata de reunião, uma das formas mais uti
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://matheushog.github.io" accesskey="h" title="Matheushog&#39;s site (Alt + H)">Matheushog&#39;s site</a>
+            <a href="https://matheushog.github.io/" accesskey="h" title="Matheushog&#39;s site (Alt + H)">Matheushog&#39;s site</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -159,6 +160,8 @@ Há diversas formas de confeccionar uma Ata de reunião, uma das formas mais uti
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
                 </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
             </div>
         </div>
         <ul id="menu">
@@ -189,11 +192,11 @@ Há diversas formas de confeccionar uma Ata de reunião, uma das formas mais uti
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://matheushog.github.io">Home</a>&nbsp;»&nbsp;<a href="https://matheushog.github.io/post/">Posts</a></div>
+    <div class="breadcrumbs"><a href="https://matheushog.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://matheushog.github.io/post/">Posts</a></div>
     <h1 class="post-title">
       Forma de otimizar a criação de ATAs de reunião
     </h1>
-    <div class="post-meta"><span title='2022-12-30 22:21:09 +0100 +0100'>December 30, 2022</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;645 words
+    <div class="post-meta">&lt;span title=&#39;2022-12-30 22:21:09 &#43;0100 &#43;0100&#39;&gt;December 30, 2022&lt;/span&gt;&amp;nbsp;·&amp;nbsp;4 min&amp;nbsp;·&amp;nbsp;645 words
 
 </div>
   </header> <div class="toc">
@@ -401,7 +404,7 @@ Há diversas formas de confeccionar uma Ata de reunião, uma das formas mais uti
 window.onload = function() {
 
 
-var url = "https:\/\/matheushog.github.io" + '\/misc\/Untitled.pdf';
+var url = "https:\/\/matheushog.github.io\/" + '\/misc\/Untitled.pdf';
 
 var hidePaginator = '' === "true";
 var hideLoader = '' === "true";
@@ -411,7 +414,7 @@ var selectedPageNum = parseInt('') || 1;
 var pdfjsLib = window['pdfjs-dist/build/pdf'];
 
 
-pdfjsLib.GlobalWorkerOptions.workerSrc = "https:\/\/matheushog.github.io" + '/js/pdfjs-dist/build/pdf.worker.js';
+pdfjsLib.GlobalWorkerOptions.workerSrc = "https:\/\/matheushog.github.io\/" + '/js/pdfjs-dist/build/pdf.worker.js';
 
 
 var pdfDoc = null,
@@ -547,8 +550,8 @@ pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://matheushog.github.io/tags/tools/">tools</a></li>
-      <li><a href="https://matheushog.github.io/tags/learning/">learning</a></li>
+      <li><a href="https://matheushog.github.io/tags/tools/">Tools</a></li>
+      <li><a href="https://matheushog.github.io/tags/learning/">Learning</a></li>
     </ul>
 <nav class="paginav">
   <a class="prev" href="https://matheushog.github.io/post/2023/analise_dados/">
@@ -613,7 +616,7 @@ pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
     </main>
     
 <footer class="footer">
-    <span>&copy; 2023 <a href="https://matheushog.github.io">Matheushog&#39;s site</a></span>
+    <span>&copy; 2024 <a href="https://matheushog.github.io/">Matheushog&#39;s site</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
