@@ -6,17 +6,16 @@
     <description>Recent content in Misc on Matheushog&#39;s site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Thu, 29 Dec 2022 22:13:01 +0100</lastBuildDate><atom:link href="https://matheushog.github.io/tags/misc/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 29 Dec 2022 22:13:01 +0100</lastBuildDate>
+    <atom:link href="https://matheushog.github.io/tags/misc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Criando cartelas de BINGO!</title>
       <link>https://matheushog.github.io/post/2022/bingo/</link>
       <pubDate>Thu, 29 Dec 2022 22:13:01 +0100</pubDate>
-      
       <guid>https://matheushog.github.io/post/2022/bingo/</guid>
       <description>Cartelas de BINGO! Durante a pandemia, foi necessário encontrar outras formas de arrecadar fundos para ajudar os 3 asilos, ajudados por voluntáios da Escola de Engenharia de Lorena (EEL-USP) da entidade, sem fins lucrativos, Idoso Amigo.
 Uma forma encontrada foi a da execução de um BINGO. Tentando otimizar o trabalho de elaboração das cartelas, encontrou-se uma forma de criação das 1500 cartelas, com auxilio de programação em linguagem python.
 Para isso contei com a ajuda de 2 pessoas que me ajudaram na elaboração do codigo, André Luiz Guimarães de Castilho e Matheus Magalhães Lotufo.</description>
     </item>
-    
   </channel>
 </rss>

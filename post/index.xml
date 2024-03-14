@@ -6,56 +6,47 @@
     <description>Recent content in Posts on Matheushog&#39;s site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Wed, 19 Jul 2023 14:36:27 +0100</lastBuildDate><atom:link href="https://matheushog.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 19 Jul 2023 14:36:27 +0100</lastBuildDate>
+    <atom:link href="https://matheushog.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Test</title>
       <link>https://matheushog.github.io/post/2023/test/</link>
       <pubDate>Wed, 19 Jul 2023 14:36:27 +0100</pubDate>
-      
       <guid>https://matheushog.github.io/post/2023/test/</guid>
       <description>Test post in Hugo!</description>
     </item>
-    
     <item>
       <title>Automação da criação de tarefas no Ms Planner</title>
       <link>https://matheushog.github.io/post/2023/automacao_planner/</link>
       <pubDate>Sun, 22 Jan 2023 04:40:01 +0100</pubDate>
-      
       <guid>https://matheushog.github.io/post/2023/automacao_planner/</guid>
       <description>Introdução O Ms Planner é uma das ferramentas disponíveis para gestão de projetos, que se destaca pela gestão visual das atividades, possibilidade de colaboração e pela facilidade de uso.
 Uma das principais dificuldades encontradas (por mim) é adicionar tarefas de um projeto, que por motivo de facilidade de acesso, estão em um arquivo .xlsx do Ms Excel. Muitas vezes há dezenas de linhas com atividades de diferentes datas de início e de conclusão, fato que dificulta a opção pela ferramenta Ms Planner, já que seria necessário adicionar as tarefas manualmente e uma a uma.</description>
     </item>
-    
     <item>
       <title>Análise de dados com python</title>
       <link>https://matheushog.github.io/post/2023/analise_dados/</link>
       <pubDate>Sat, 14 Jan 2023 23:06:35 +0100</pubDate>
-      
       <guid>https://matheushog.github.io/post/2023/analise_dados/</guid>
       <description>Análise de dados com python A carreira de analista de dados ou engenheiro de dados, possui grande demanda no mercado nacional e internacional. Uma pesquisa de 2021 do site Canaltech, mostrou uma demanda de mais de 420 mil profissionais na área entre os anos de 2019 e 2024, sendo que no Brasil são formados 42 mil profissionais ano.
 Estes fatos me motivaram a buscar informações e assistar a algumas aulas disponíveis em plataformas como o youtube.</description>
     </item>
-    
     <item>
       <title>Forma de otimizar a criação de ATAs de reunião</title>
       <link>https://matheushog.github.io/post/2022/ata/</link>
       <pubDate>Fri, 30 Dec 2022 22:21:09 +0100</pubDate>
-      
       <guid>https://matheushog.github.io/post/2022/ata/</guid>
       <description>Elaboração de ATA de Reunião Uma das formas de formalizar os assuntos tratados de uma reunião de projeto é a elaboração de uma ATA de reunião.
 Há diversas formas de confeccionar uma Ata de reunião, uma das formas mais utilizadas é a elaboração de um documento .docx básico, com as anotações de algum participante da reunião (normalmente o gerente do projeto, ou o responsável pelo projeto), que será posteriormente encaminhado via e-mail para todos os participantes.</description>
     </item>
-    
     <item>
       <title>Criando cartelas de BINGO!</title>
       <link>https://matheushog.github.io/post/2022/bingo/</link>
       <pubDate>Thu, 29 Dec 2022 22:13:01 +0100</pubDate>
-      
       <guid>https://matheushog.github.io/post/2022/bingo/</guid>
       <description>Cartelas de BINGO! Durante a pandemia, foi necessário encontrar outras formas de arrecadar fundos para ajudar os 3 asilos, ajudados por voluntáios da Escola de Engenharia de Lorena (EEL-USP) da entidade, sem fins lucrativos, Idoso Amigo.
 Uma forma encontrada foi a da execução de um BINGO. Tentando otimizar o trabalho de elaboração das cartelas, encontrou-se uma forma de criação das 1500 cartelas, com auxilio de programação em linguagem python.
 Para isso contei com a ajuda de 2 pessoas que me ajudaram na elaboração do codigo, André Luiz Guimarães de Castilho e Matheus Magalhães Lotufo.</description>
     </item>
-    
   </channel>
 </rss>

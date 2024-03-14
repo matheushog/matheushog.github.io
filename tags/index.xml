@@ -6,51 +6,42 @@
     <description>Recent content in Tags on Matheushog&#39;s site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Sun, 22 Jan 2023 04:40:01 +0100</lastBuildDate><atom:link href="https://matheushog.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 22 Jan 2023 04:40:01 +0100</lastBuildDate>
+    <atom:link href="https://matheushog.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Learning</title>
       <link>https://matheushog.github.io/tags/learning/</link>
       <pubDate>Sun, 22 Jan 2023 04:40:01 +0100</pubDate>
-      
       <guid>https://matheushog.github.io/tags/learning/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Analysis</title>
       <link>https://matheushog.github.io/tags/analysis/</link>
       <pubDate>Sat, 14 Jan 2023 23:06:35 +0100</pubDate>
-      
       <guid>https://matheushog.github.io/tags/analysis/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Python</title>
       <link>https://matheushog.github.io/tags/python/</link>
       <pubDate>Sat, 14 Jan 2023 23:06:35 +0100</pubDate>
-      
       <guid>https://matheushog.github.io/tags/python/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Tools</title>
       <link>https://matheushog.github.io/tags/tools/</link>
       <pubDate>Fri, 30 Dec 2022 22:21:09 +0100</pubDate>
-      
       <guid>https://matheushog.github.io/tags/tools/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Misc</title>
       <link>https://matheushog.github.io/tags/misc/</link>
       <pubDate>Thu, 29 Dec 2022 22:13:01 +0100</pubDate>
-      
       <guid>https://matheushog.github.io/tags/misc/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

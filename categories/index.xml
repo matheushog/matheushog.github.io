@@ -6,33 +6,28 @@
     <description>Recent content in Categories on Matheushog&#39;s site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Sun, 22 Jan 2023 04:40:01 +0100</lastBuildDate><atom:link href="https://matheushog.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 22 Jan 2023 04:40:01 +0100</lastBuildDate>
+    <atom:link href="https://matheushog.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Project</title>
       <link>https://matheushog.github.io/categories/project/</link>
       <pubDate>Sun, 22 Jan 2023 04:40:01 +0100</pubDate>
-      
       <guid>https://matheushog.github.io/categories/project/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Data</title>
       <link>https://matheushog.github.io/categories/data/</link>
       <pubDate>Sat, 14 Jan 2023 23:06:35 +0100</pubDate>
-      
       <guid>https://matheushog.github.io/categories/data/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Code</title>
       <link>https://matheushog.github.io/categories/code/</link>
       <pubDate>Thu, 29 Dec 2022 22:13:01 +0100</pubDate>
-      
       <guid>https://matheushog.github.io/categories/code/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

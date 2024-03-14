@@ -6,26 +6,23 @@
     <description>Recent content in Project on Matheushog&#39;s site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Sun, 22 Jan 2023 04:40:01 +0100</lastBuildDate><atom:link href="https://matheushog.github.io/categories/project/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 22 Jan 2023 04:40:01 +0100</lastBuildDate>
+    <atom:link href="https://matheushog.github.io/categories/project/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Automação da criação de tarefas no Ms Planner</title>
       <link>https://matheushog.github.io/post/2023/automacao_planner/</link>
       <pubDate>Sun, 22 Jan 2023 04:40:01 +0100</pubDate>
-      
       <guid>https://matheushog.github.io/post/2023/automacao_planner/</guid>
       <description>Introdução O Ms Planner é uma das ferramentas disponíveis para gestão de projetos, que se destaca pela gestão visual das atividades, possibilidade de colaboração e pela facilidade de uso.
 Uma das principais dificuldades encontradas (por mim) é adicionar tarefas de um projeto, que por motivo de facilidade de acesso, estão em um arquivo .xlsx do Ms Excel. Muitas vezes há dezenas de linhas com atividades de diferentes datas de início e de conclusão, fato que dificulta a opção pela ferramenta Ms Planner, já que seria necessário adicionar as tarefas manualmente e uma a uma.</description>
     </item>
-    
     <item>
       <title>Forma de otimizar a criação de ATAs de reunião</title>
       <link>https://matheushog.github.io/post/2022/ata/</link>
       <pubDate>Fri, 30 Dec 2022 22:21:09 +0100</pubDate>
-      
       <guid>https://matheushog.github.io/post/2022/ata/</guid>
       <description>Elaboração de ATA de Reunião Uma das formas de formalizar os assuntos tratados de uma reunião de projeto é a elaboração de uma ATA de reunião.
 Há diversas formas de confeccionar uma Ata de reunião, uma das formas mais utilizadas é a elaboração de um documento .docx básico, com as anotações de algum participante da reunião (normalmente o gerente do projeto, ou o responsável pelo projeto), que será posteriormente encaminhado via e-mail para todos os participantes.</description>
     </item>
-    
   </channel>
 </rss>
