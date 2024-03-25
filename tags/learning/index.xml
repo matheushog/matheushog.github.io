@@ -6,8 +6,16 @@
     <description>Recent content in Learning on Matheushog&#39;s site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Sun, 22 Jan 2023 04:40:01 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 25 Mar 2024 14:36:27 +0100</lastBuildDate>
     <atom:link href="https://matheushog.github.io/tags/learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Análise de dados em R</title>
+      <link>https://matheushog.github.io/post/2024/analise_dados_dengue/</link>
+      <pubDate>Mon, 25 Mar 2024 14:36:27 +0100</pubDate>
+      <guid>https://matheushog.github.io/post/2024/analise_dados_dengue/</guid>
+      <description>Introdução Nos últimos anos, a análise de dados emergiu como uma habilidade fundamental altamente valorizada em diversos setores, impulsionada pela capacidade de extrair insights significativos a partir de conjuntos de dados complexos. Esta capacidade não apenas fornece uma vantagem competitiva para as empresas, mas também desempenha um papel crucial na tomada de decisões informadas em várias áreas, desde a saúde até os negócios.
+Nesse contexto, a busca por maneiras mais eficientes de acessar e analisar dados torna-se essencial.</description>
+    </item>
     <item>
       <title>Automação da criação de tarefas no Ms Planner</title>
       <link>https://matheushog.github.io/post/2023/automacao_planner/</link>

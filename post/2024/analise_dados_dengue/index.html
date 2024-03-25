@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Análise de dados em R | Matheushog&#39;s site</title>
+<meta name="keywords" content="analysis, R, learning">
+<meta name="description" content="Introdução Nos últimos anos, a análise de dados emergiu como uma habilidade fundamental altamente valorizada em diversos setores, impulsionada pela capacidade de extrair insights significativos a partir de conjuntos de dados complexos. Esta capacidade não apenas fornece uma vantagem competitiva para as empresas, mas também desempenha um papel crucial na tomada de decisões informadas em várias áreas, desde a saúde até os negócios.
+Nesse contexto, a busca por maneiras mais eficientes de acessar e analisar dados torna-se essencial.">
+<meta name="author" content="">
+<link rel="canonical" href="https://matheushog.github.io/post/2024/analise_dados_dengue/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://matheushog.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://matheushog.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://matheushog.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://matheushog.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://matheushog.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://matheushog.github.io/post/2024/analise_dados_dengue/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Análise de dados em R" />
+<meta property="og:description" content="Introdução Nos últimos anos, a análise de dados emergiu como uma habilidade fundamental altamente valorizada em diversos setores, impulsionada pela capacidade de extrair insights significativos a partir de conjuntos de dados complexos. Esta capacidade não apenas fornece uma vantagem competitiva para as empresas, mas também desempenha um papel crucial na tomada de decisões informadas em várias áreas, desde a saúde até os negócios.
+Nesse contexto, a busca por maneiras mais eficientes de acessar e analisar dados torna-se essencial." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://matheushog.github.io/post/2024/analise_dados_dengue/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-03-25T14:36:27+01:00" />
+<meta property="article:modified_time" content="2024-03-25T14:36:27+01:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Análise de dados em R"/>
+<meta name="twitter:description" content="Introdução Nos últimos anos, a análise de dados emergiu como uma habilidade fundamental altamente valorizada em diversos setores, impulsionada pela capacidade de extrair insights significativos a partir de conjuntos de dados complexos. Esta capacidade não apenas fornece uma vantagem competitiva para as empresas, mas também desempenha um papel crucial na tomada de decisões informadas em várias áreas, desde a saúde até os negócios.
+Nesse contexto, a busca por maneiras mais eficientes de acessar e analisar dados torna-se essencial."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://matheushog.github.io/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Análise de dados em R",
+      "item": "https://matheushog.github.io/post/2024/analise_dados_dengue/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Análise de dados em R",
+  "name": "Análise de dados em R",
+  "description": "Introdução Nos últimos anos, a análise de dados emergiu como uma habilidade fundamental altamente valorizada em diversos setores, impulsionada pela capacidade de extrair insights significativos a partir de conjuntos de dados complexos. Esta capacidade não apenas fornece uma vantagem competitiva para as empresas, mas também desempenha um papel crucial na tomada de decisões informadas em várias áreas, desde a saúde até os negócios.\nNesse contexto, a busca por maneiras mais eficientes de acessar e analisar dados torna-se essencial.",
+  "keywords": [
+    "analysis", "R", "learning"
+  ],
+  "articleBody": "Introdução Nos últimos anos, a análise de dados emergiu como uma habilidade fundamental altamente valorizada em diversos setores, impulsionada pela capacidade de extrair insights significativos a partir de conjuntos de dados complexos. Esta capacidade não apenas fornece uma vantagem competitiva para as empresas, mas também desempenha um papel crucial na tomada de decisões informadas em várias áreas, desde a saúde até os negócios.\nNesse contexto, a busca por maneiras mais eficientes de acessar e analisar dados torna-se essencial. Ao explorar novas ferramentas e tecnologias, como a linguagem de programação R, os profissionais podem encontrar métodos mais eficazes para extrair informações valiosas a partir de conjuntos de dados volumosos e variados.\nCom essa mentalidade de busca por eficiência, surge a necessidade de acessar fontes primárias de dados, especialmente em áreas críticas, como a saúde pública. Um exemplo claro disso é o desafio contínuo representado pela dengue, uma doença endêmica em muitas regiões do mundo. Para compreender melhor a dinâmica da dengue e suas tendências, é essencial acessar e analisar dados detalhados sobre casos relatados.\nNo entanto, obter e trabalhar com esses dados nem sempre é uma tarefa simples. Nesse contexto, ferramentas como o pacote microdatasus para R tornam-se inestimáveis. Ao permitir o acesso simplificado aos dados do DATASUS, o microdatasus oferece uma maneira eficiente e direta de realizar análises detalhadas e insights sobre a incidência e distribuição da dengue ao longo do tempo.\nEste post explora a jornada de análise de dados da dengue utilizando o pacote microdatasus em R, destacando sua eficácia e utilidade na obtenção de informações valiosas a partir de fontes primárias de dados.\nObtendo a biblioteca microdatasus Para começar, é necessário instalar o pacote microdatasus, que está disponível no repositório do GitHub do autor. Você pode encontrar mais informações sobre o pacote e sua documentação aqui.\n# Antes de instalar o pacote, é necessário ter o pacote \"remotes\" instalado install.packages(\"remotes\") # Uma vez que o pacote \"remotes\" está instalado, podemos instalar o pacote \"microdatasus\" diretamente do GitHub remotes::install_github(\"rfsaldanha/microdatasus\") # Após a instalação bem-sucedida, podemos carregar o pacote para começar a usá-lo library(microdatasus) Obter as informações da base de dados do SUS Para começar, vamos extrair os dados de dengue do Sistema de Informação de Agravos de Notificação (SINAN) do ano de 2023:\n# Extrair os dados brutos da dengue do SINAN para o ano de 2023 dengue_bruto \u003c- fetch_datasus(year_start = 2023, year_end = 2023, information_system = \"SINAN-DENGUE\") # Processar os dados brutos para prepará-los para análise dengue23 \u003c- process_sinan_dengue(dengue_bruto) # Salvar a base de dados processada em um arquivo .RData para uso futuro save(dengue23, file = \"dengue23.RData\") Neste código:\nfetch_datasus(): Esta função extrai os dados brutos da dengue do DATASUS para o ano de 2023, especificamente do Sistema de Informação de Agravos de Notificação (SINAN) relacionado à dengue.\nprocess_sinan_dengue(): Esta função realiza o processamento dos dados brutos, aplicando transformações e limpezas necessárias para preparar os dados para análise. Isso pode incluir a formatação de variáveis, tratamento de valores ausentes e outras operações de preparação de dados.\nsave(): Salva a base de dados processada em um arquivo .RData chamado “dengue23.RData”. Salvar os dados desta forma permite que você os carregue novamente posteriormente sem precisar repetir o processo de extração e processamento.\nPor fim, se você deseja carregar os dados processados em uma sessão futura do R, pode fazer isso usando o seguinte comando:\n# Carregar a base de dados processada a partir do arquivo .RData load(\"dengue23.RData\") Isso garante que você possa trabalhar com os dados de dengue de 2023 sem precisar repetir o processo de ETL novamente.\nPara fins de comparação, repetimos o processo, desta vez considerando o ano de 2024 (Referência: 24/03/2024), alterando apenas as variáveis de year_start = 2023 e year_end = 2023 para year_start = 2024 e year_end = 2024.\nDistribuição de Óbitos por Faixa Etária e Sexo em 2023 e 24/03/2024 Neste código, estamos explorando os dados de óbitos relacionados à dengue no ano de 2023. Inicialmente, carregamos o conjunto de dados obtdengue23 em um objeto denominado df. Esses dados foram previamente filtrados para incluir apenas casos de óbito por dengue confirmados ou em investigação.\n# Filtrar os dados para incluir apenas casos de óbito por dengue confirmados ou em investigação obtdengue23 \u003c- subset(dengue23, EVOLUCAO %in% c(\"Óbito por dengue\", \"Óbito em investigação\")) # Salvar os dados filtrados em um arquivo .RData para uso futuro save(obtdengue23, file = \"dengueobito23.RData\") Após a preparação dos dados, seguimos para o pré-processamento. Primeiro, removemos registros com sexo “ignorado” da nossa análise, garantindo que estejamos lidando apenas com dados completos e confiáveis. Em seguida, convertemos a coluna de idade para o formato numérico, permitindo operações matemáticas e análises mais precisas.\nApós a conversão bem-sucedida da idade, calculamos a faixa etária de cada indivíduo com base em sua idade. Esta faixa etária é definida em intervalos de 10 anos, começando de 0-10 anos até 91 anos ou mais.\nAgora que temos a faixa etária de cada indivíduo, agrupamos os dados por sexo e faixa etária e contamos o número de óbitos em cada grupo. Esses dados agrupados nos fornecem uma visão detalhada da distribuição de óbitos por faixa etária e sexo.\nPor fim, utilizamos esses dados para plotar um gráfico de barras. Cada barra representa uma faixa etária, e as cores das barras representam o sexo correspondente. A legenda nos ajuda a distinguir entre os grupos de sexo. Além disso, adicionamos intervalos no eixo y para facilitar a interpretação e uma grade horizontal para melhorar a legibilidade do gráfico.\ndf \u003c- obtdengue23 # Remover registros com sexo \"ignorado\" df \u003c- df[df$CS_SEXO != \"Ignorado\", ] # Convertendo a coluna de idade para numérica df$IDADEanos \u003c- as.numeric(df$IDADEanos) # Verificando se a conversão foi bem-sucedida str(df$IDADEanos) # Agora, podemos calcular a faixa etária faixa_etaria \u003c- cut(df$IDADEanos, breaks = c(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, Inf), labels = c(\"0-10\", \"11-20\", \"21-30\", \"31-40\", \"41-50\", \"51-60\", \"61-70\", \"71-80\", \"81-90\", \"91+\")) # Agora, agrupamos os dados por sexo e faixa etária e contamos o número de óbitos em cada grupo dados_agrupados \u003c- table(df$CS_SEXO, faixa_etaria) # Agora, podemos plotar o gráfico de barras barplot(dados_agrupados, beside = TRUE, main = \"Distribuição de Óbitos por Faixa Etária e Sexo (Ref. 2023)\", xlab = \"Faixa Etária\", ylab = \"Número de Óbitos\", col = c(\"#FFB6C1\", \"#4169E1\"), ylim = c(0, 120), axes = FALSE ) # Adiciona os intervalos do eixo y manualmente intervalos_y \u003c- seq(0, 120, by = 20) axis(side = 2, at = intervalos_y) # Adiciona grid horizontal for (i in intervalos_y) { abline(h = i, col = \"gray\", lty = \"dashed\") } box() # Adicionando a legenda legend(\"topleft\", legend = rownames(dados_agrupados), fill = c(\"#FFB6C1\", \"#4169E1\"), title = \"Sexo\") Segue abaixo os gráficos que ilustram a distribuição de óbitos por faixa etária e sexo para os anos de 2023 e 2024, respectivamente:\nGráfico 1: Distribuição de Óbitos por Faixa Etária e Sexo (Ref. 2023)\nEste gráfico apresenta a distribuição de óbitos por faixa etária e sexo com base nos dados do ano de 2023.\nGráfico 2: Distribuição de Óbitos por Faixa Etária e Sexo (Ref. 24/03/2024)\nEste segundo gráfico ilustra a distribuição de óbitos por faixa etária e sexo, agora considerando o período que vai desde o início do ano de 2024 até a data de 24 de março de 2024.\nEsses gráficos fornecem insights valiosos sobre a distribuição dos óbitos relacionados à dengue ao longo do tempo, permitindo uma comparação visual entre os dois períodos analisados.\nDistribuição de Óbitos por Faixa Etária e Ano Este código realiza uma análise da distribuição de óbitos por faixa etária e ano, combinando os dados dos anos de 2023 e 2024.\n# Combinando os dados de óbitos por dengue dos anos de 2023 e 2024 dados_combinados \u003c- rbind(obtdengue23, obtdengue24) # Convertendo a coluna de idade para o formato numérico dados_combinados$IDADEanos \u003c- as.numeric(dados_combinados$IDADEanos) # Verificando se a conversão foi bem-sucedida str(dados_combinados$IDADEanos) # Calculando a faixa etária dos indivíduos faixa_etaria \u003c- cut(dados_combinados$IDADEanos, breaks = c(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, Inf), labels = c(\"0-10\", \"11-20\", \"21-30\", \"31-40\", \"41-50\", \"51-60\", \"61-70\", \"71-80\", \"81-90\", \"91+\")) # Agrupando os dados por ano e faixa etária e contando o número de óbitos em cada grupo dados_agrupados \u003c- table(dados_combinados$NU_ANO, faixa_etaria) # Plotando o gráfico de barras barplot(dados_agrupados, beside = TRUE, main = \"Distribuição de Óbitos por Faixa Etária e Ano\", xlab = \"Faixa Etária\", ylab = \"Número de Óbitos\", col = c(\"cyan\", \"darkblue\"), ylim = c(0, 325), axes = FALSE ) # Adicionando os intervalos do eixo y manualmente intervalos_y \u003c- seq(0, 325, by = 25) axis(side = 2, at = intervalos_y) # Adicionando grid horizontal for (i in intervalos_y) { abline(h = i, col = \"gray\", lty = \"dashed\") } box() # Adicionando a legenda legend(\"topleft\", legend = rownames(dados_agrupados), fill = c(\"cyan\", \"darkblue\"), title = \"Ano\") Após combinar os dados dos anos de 2023 e 2024, a coluna de idade é convertida para o formato numérico e, em seguida, é calculada a faixa etária dos indivíduos. Os dados são agrupados por ano e faixa etária, e o número de óbitos em cada grupo é contado. Um gráfico de barras é plotado para visualizar a distribuição de óbitos por faixa etária e ano, com as cores representando os anos correspondentes. A legenda é adicionada para facilitar a interpretação do gráfico.\nGráfico 3: Distribuição de Óbitos por Faixa Etária e Ano (de 2023 a 24/03/2024)\nConclusão Nesta análise, investigamos a distribuição de óbitos relacionados à dengue nos anos de 2023 e até 24 de março de 2024, considerando faixa etária, ano e sexo. Inicialmente, combinamos os dados de óbitos dos dois anos e realizamos o pré-processamento necessário, incluindo a conversão da coluna de idade para o formato numérico e a criação da faixa etária dos indivíduos.\nEm seguida, agrupamos os dados por ano, sexo e faixa etária, contabilizando o número de óbitos em cada grupo. Essa análise nos permitiu identificar padrões e tendências na distribuição dos óbitos ao longo desses dois períodos, levando em conta a variável de sexo.\nO gráfico resultante ilustra claramente como os óbitos por dengue estão distribuídos entre as diferentes faixas etárias, anos e sexos. Observamos variações significativas na distribuição de óbitos entre os anos de 2023 e 2024, bem como entre os sexos, destacando a importância de uma abordagem diferenciada na prevenção e tratamento da dengue com base nessas características.\nPróximos Passos Sugeridos Análise Temporal por Sexo: Realizar uma análise mais detalhada da evolução temporal dos óbitos por dengue por sexo ao longo dos anos, identificando possíveis diferenças nas tendências e padrões entre homens e mulheres.\nAnálise Geográfica por Sexo: Investigar a distribuição geográfica dos óbitos por dengue por sexo para identificar possíveis disparidades regionais e direcionar estratégias de prevenção e controle específicas para cada grupo.\nAvaliação de Fatores de Risco por Sexo: Explorar os possíveis fatores de risco associados aos óbitos por dengue por sexo, como comportamentais, biológicos e sociais, para desenvolver intervenções personalizadas e mais eficazes.\nImplementação de Medidas de Intervenção por Sexo: Implementar medidas de intervenção direcionadas por sexo, como campanhas de conscientização, programas de vacinação e controle de vetores adaptados às necessidades e características de homens e mulheres.\nEsses próximos passos podem proporcionar uma compreensão mais abrangente e detalhada dos padrões de óbitos por dengue por sexo e orientar estratégias mais eficazes para reduzir o impacto da doença na saúde pública.\nReferência SALDANHA, Raphael de Freitas; BASTOS, Ronaldo Rocha; BARCELLOS, Christovam. Microdatasus: pacote para download e pré-processamento de microdados do Departamento de Informática do SUS (DATASUS). Cad. Saúde Pública, Rio de Janeiro , v. 35, n. 9, e00032419, 2019. Available from http://ref.scielo.org/dhcq3y.\n",
+  "wordCount" : "1916",
+  "inLanguage": "en",
+  "datePublished": "2024-03-25T14:36:27+01:00",
+  "dateModified": "2024-03-25T14:36:27+01:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://matheushog.github.io/post/2024/analise_dados_dengue/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Matheushog's site",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://matheushog.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://matheushog.github.io/" accesskey="h" title="Matheushog&#39;s site (Alt + H)">Matheushog&#39;s site</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://matheushog.github.io/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://matheushog.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://matheushog.github.io/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://matheushog.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://matheushog.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://matheushog.github.io/post/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Análise de dados em R
+    </h1>
+    <div class="post-meta"><span title='2024-03-25 14:36:27 +0100 +0100'>March 25, 2024</span>&nbsp;·&nbsp;9 min&nbsp;·&nbsp;1916 words
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#obtendo-a-biblioteca-microdatasus">Obtendo a biblioteca microdatasus</a></li>
+    <li><a href="#obter-as-informações-da-base-de-dados-do-sus">Obter as informações da base de dados do SUS</a></li>
+    <li><a href="#distribuição-de-óbitos-por-faixa-etária-e-sexo-em-2023-e-24032024">Distribuição de Óbitos por Faixa Etária e Sexo em 2023 e 24/03/2024</a></li>
+    <li><a href="#distribuição-de-óbitos-por-faixa-etária-e-ano">Distribuição de Óbitos por Faixa Etária e Ano</a></li>
+    <li><a href="#conclusão">Conclusão</a></li>
+    <li><a href="#próximos-passos-sugeridos">Próximos Passos Sugeridos</a></li>
+    <li><a href="#referência">Referência</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="introdução">Introdução<a hidden class="anchor" aria-hidden="true" href="#introdução">#</a></h1>
+<p>Nos últimos anos, a análise de dados emergiu como uma habilidade fundamental altamente valorizada em diversos setores, impulsionada pela capacidade de extrair insights significativos a partir de conjuntos de dados complexos. Esta capacidade não apenas fornece uma vantagem competitiva para as empresas, mas também desempenha um papel crucial na tomada de decisões informadas em várias áreas, desde a saúde até os negócios.</p>
+<p>Nesse contexto, a busca por maneiras mais eficientes de acessar e analisar dados torna-se essencial. Ao explorar novas ferramentas e tecnologias, como a <a href="https://www.r-project.org/">linguagem de programação R</a>, os profissionais podem encontrar métodos mais eficazes para extrair informações valiosas a partir de conjuntos de dados volumosos e variados.</p>
+<p>Com essa mentalidade de busca por eficiência, surge a necessidade de acessar fontes primárias de dados, especialmente em áreas críticas, como a saúde pública. Um exemplo claro disso é o desafio contínuo representado pela dengue, uma doença endêmica em muitas regiões do mundo. Para compreender melhor a dinâmica da dengue e suas tendências, é essencial acessar e analisar dados detalhados sobre casos relatados.</p>
+<p>No entanto, obter e trabalhar com esses dados nem sempre é uma tarefa simples. Nesse contexto, ferramentas como o pacote <code>microdatasus</code> para R tornam-se inestimáveis. Ao permitir o acesso simplificado aos dados do <a href="https://datasus.saude.gov.br/">DATASUS</a>, o <code>microdatasus</code> oferece uma maneira eficiente e direta de realizar análises detalhadas e insights sobre a incidência e distribuição da dengue ao longo do tempo.</p>
+<p>Este post explora a jornada de análise de dados da dengue utilizando o pacote <code>microdatasus</code> em R, destacando sua eficácia e utilidade na obtenção de informações valiosas a partir de fontes primárias de dados.</p>
+<hr>
+<h2 id="obtendo-a-biblioteca-microdatasus">Obtendo a biblioteca microdatasus<a hidden class="anchor" aria-hidden="true" href="#obtendo-a-biblioteca-microdatasus">#</a></h2>
+<p>Para começar, é necessário instalar o pacote <code>microdatasus</code>, que está disponível no repositório do GitHub do autor. Você pode encontrar mais informações sobre o pacote e sua documentação <a href="https://rfsaldanha.github.io/microdatasus/">aqui</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#75715e"># Antes de instalar o pacote, é necessário ter o pacote &#34;remotes&#34; instalado</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">install.packages</span>(<span style="color:#e6db74">&#34;remotes&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Uma vez que o pacote &#34;remotes&#34; está instalado, podemos instalar o pacote &#34;microdatasus&#34; diretamente do GitHub</span>
+</span></span><span style="display:flex;"><span>remotes<span style="color:#f92672">::</span><span style="color:#a6e22e">install_github</span>(<span style="color:#e6db74">&#34;rfsaldanha/microdatasus&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Após a instalação bem-sucedida, podemos carregar o pacote para começar a usá-lo</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(microdatasus)
+</span></span></code></pre></div><hr>
+<h2 id="obter-as-informações-da-base-de-dados-do-sus">Obter as informações da base de dados do SUS<a hidden class="anchor" aria-hidden="true" href="#obter-as-informações-da-base-de-dados-do-sus">#</a></h2>
+<p>Para começar, vamos extrair os dados de dengue do Sistema de Informação de Agravos de Notificação (SINAN) do ano de 2023:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#75715e"># Extrair os dados brutos da dengue do SINAN para o ano de 2023</span>
+</span></span><span style="display:flex;"><span>dengue_bruto <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">fetch_datasus</span>(year_start <span style="color:#f92672">=</span> <span style="color:#ae81ff">2023</span>, year_end <span style="color:#f92672">=</span> <span style="color:#ae81ff">2023</span>, information_system <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;SINAN-DENGUE&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Processar os dados brutos para prepará-los para análise</span>
+</span></span><span style="display:flex;"><span>dengue23 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">process_sinan_dengue</span>(dengue_bruto)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Salvar a base de dados processada em um arquivo .RData para uso futuro</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">save</span>(dengue23, file <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;dengue23.RData&#34;</span>)
+</span></span></code></pre></div><p><strong>Neste código:</strong></p>
+<ul>
+<li>
+<p><code>fetch_datasus()</code>: Esta função extrai os dados brutos da dengue do DATASUS para o ano de 2023, especificamente do Sistema de Informação de Agravos de Notificação (SINAN) relacionado à dengue.</p>
+</li>
+<li>
+<p><code>process_sinan_dengue()</code>: Esta função realiza o processamento dos dados brutos, aplicando transformações e limpezas necessárias para preparar os dados para análise. Isso pode incluir a formatação de variáveis, tratamento de valores ausentes e outras operações de preparação de dados.</p>
+</li>
+<li>
+<p><code>save()</code>: Salva a base de dados processada em um arquivo .RData chamado &ldquo;dengue23.RData&rdquo;. Salvar os dados desta forma permite que você os carregue novamente posteriormente sem precisar repetir o processo de extração e processamento.</p>
+</li>
+</ul>
+<p>Por fim, se você deseja carregar os dados processados em uma sessão futura do R, pode fazer isso usando o seguinte comando:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#75715e"># Carregar a base de dados processada a partir do arquivo .RData</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">load</span>(<span style="color:#e6db74">&#34;dengue23.RData&#34;</span>)
+</span></span></code></pre></div><p>Isso garante que você possa trabalhar com os dados de dengue de 2023 sem precisar repetir o processo de ETL novamente.</p>
+<p>Para fins de comparação, repetimos o processo, desta vez considerando o ano de <strong>2024</strong> (Referência: 24/03/2024), alterando apenas as variáveis de <code>year_start = 2023</code> e <code>year_end = 2023</code> para <code>year_start = 2024</code> e <code>year_end = 2024</code>.</p>
+<hr>
+<h2 id="distribuição-de-óbitos-por-faixa-etária-e-sexo-em-2023-e-24032024">Distribuição de Óbitos por Faixa Etária e Sexo em 2023 e 24/03/2024<a hidden class="anchor" aria-hidden="true" href="#distribuição-de-óbitos-por-faixa-etária-e-sexo-em-2023-e-24032024">#</a></h2>
+<p>Neste código, estamos explorando os dados de óbitos relacionados à dengue no ano de 2023. Inicialmente, carregamos o conjunto de dados obtdengue23 em um objeto denominado df. Esses dados foram previamente filtrados para incluir apenas casos de óbito por dengue confirmados ou em investigação.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#75715e"># Filtrar os dados para incluir apenas casos de óbito por dengue confirmados ou em investigação</span>
+</span></span><span style="display:flex;"><span>obtdengue23 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">subset</span>(dengue23, EVOLUCAO <span style="color:#f92672">%in%</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;Óbito por dengue&#34;</span>, <span style="color:#e6db74">&#34;Óbito em investigação&#34;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Salvar os dados filtrados em um arquivo .RData para uso futuro</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">save</span>(obtdengue23, file <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;dengueobito23.RData&#34;</span>)
+</span></span></code></pre></div><p>Após a preparação dos dados, seguimos para o pré-processamento. Primeiro, removemos registros com sexo &ldquo;ignorado&rdquo; da nossa análise, garantindo que estejamos lidando apenas com dados completos e confiáveis. Em seguida, convertemos a coluna de idade para o formato numérico, permitindo operações matemáticas e análises mais precisas.</p>
+<p>Após a conversão bem-sucedida da idade, calculamos a faixa etária de cada indivíduo com base em sua idade. Esta faixa etária é definida em intervalos de 10 anos, começando de 0-10 anos até 91 anos ou mais.</p>
+<p>Agora que temos a faixa etária de cada indivíduo, agrupamos os dados por sexo e faixa etária e contamos o número de óbitos em cada grupo. Esses dados agrupados nos fornecem uma visão detalhada da distribuição de óbitos por faixa etária e sexo.</p>
+<p>Por fim, utilizamos esses dados para plotar um gráfico de barras. Cada barra representa uma faixa etária, e as cores das barras representam o sexo correspondente. A legenda nos ajuda a distinguir entre os grupos de sexo. Além disso, adicionamos intervalos no eixo y para facilitar a interpretação e uma grade horizontal para melhorar a legibilidade do gráfico.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>df <span style="color:#f92672">&lt;-</span> obtdengue23
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remover registros com sexo &#34;ignorado&#34;</span>
+</span></span><span style="display:flex;"><span>df <span style="color:#f92672">&lt;-</span> df[df<span style="color:#f92672">$</span>CS_SEXO <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;Ignorado&#34;</span>, ]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Convertendo a coluna de idade para numérica</span>
+</span></span><span style="display:flex;"><span>df<span style="color:#f92672">$</span>IDADEanos <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">as.numeric</span>(df<span style="color:#f92672">$</span>IDADEanos)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Verificando se a conversão foi bem-sucedida</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">str</span>(df<span style="color:#f92672">$</span>IDADEanos)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Agora, podemos calcular a faixa etária</span>
+</span></span><span style="display:flex;"><span>faixa_etaria <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">cut</span>(df<span style="color:#f92672">$</span>IDADEanos, breaks <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">40</span>, <span style="color:#ae81ff">50</span>, <span style="color:#ae81ff">60</span>, <span style="color:#ae81ff">70</span>, <span style="color:#ae81ff">80</span>, <span style="color:#ae81ff">90</span>, <span style="color:#66d9ef">Inf</span>), labels <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;0-10&#34;</span>, <span style="color:#e6db74">&#34;11-20&#34;</span>, <span style="color:#e6db74">&#34;21-30&#34;</span>, <span style="color:#e6db74">&#34;31-40&#34;</span>, <span style="color:#e6db74">&#34;41-50&#34;</span>, <span style="color:#e6db74">&#34;51-60&#34;</span>, <span style="color:#e6db74">&#34;61-70&#34;</span>, <span style="color:#e6db74">&#34;71-80&#34;</span>, <span style="color:#e6db74">&#34;81-90&#34;</span>, <span style="color:#e6db74">&#34;91+&#34;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Agora, agrupamos os dados por sexo e faixa etária e contamos o número de óbitos em cada grupo</span>
+</span></span><span style="display:flex;"><span>dados_agrupados <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">table</span>(df<span style="color:#f92672">$</span>CS_SEXO, faixa_etaria)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Agora, podemos plotar o gráfico de barras</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">barplot</span>(dados_agrupados, beside <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>,
+</span></span><span style="display:flex;"><span>        main <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Distribuição de Óbitos por Faixa Etária e Sexo (Ref. 2023)&#34;</span>,
+</span></span><span style="display:flex;"><span>        xlab <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Faixa Etária&#34;</span>,
+</span></span><span style="display:flex;"><span>        ylab <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Número de Óbitos&#34;</span>,
+</span></span><span style="display:flex;"><span>        col <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;#FFB6C1&#34;</span>, <span style="color:#e6db74">&#34;#4169E1&#34;</span>),
+</span></span><span style="display:flex;"><span>        ylim <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">120</span>),
+</span></span><span style="display:flex;"><span>        axes <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Adiciona os intervalos do eixo y manualmente</span>
+</span></span><span style="display:flex;"><span>intervalos_y <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">seq</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">120</span>, by <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">axis</span>(side <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>, at <span style="color:#f92672">=</span> intervalos_y)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Adiciona grid horizontal</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (i <span style="color:#66d9ef">in</span> intervalos_y) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">abline</span>(h <span style="color:#f92672">=</span> i, col <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;gray&#34;</span>, lty <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;dashed&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">box</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Adicionando a legenda</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">legend</span>(<span style="color:#e6db74">&#34;topleft&#34;</span>, legend <span style="color:#f92672">=</span> <span style="color:#a6e22e">rownames</span>(dados_agrupados), fill <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;#FFB6C1&#34;</span>, <span style="color:#e6db74">&#34;#4169E1&#34;</span>), title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Sexo&#34;</span>)
+</span></span></code></pre></div><p>Segue abaixo os gráficos que ilustram a distribuição de óbitos por faixa etária e sexo para os anos de 2023 e 2024, respectivamente:</p>
+<p><strong>Gráfico 1: Distribuição de Óbitos por Faixa Etária e Sexo (Ref. 2023)</strong></p>
+<p><img loading="lazy" src="/img/Dengue_sexo_2023.png" alt="Distribuição de Óbitos por Faixa Etária e Sexo (Ref. 2023)"  />
+</p>
+<p>Este gráfico apresenta a distribuição de óbitos por faixa etária e sexo com base nos dados do ano de 2023.</p>
+<p><strong>Gráfico 2: Distribuição de Óbitos por Faixa Etária e Sexo (Ref. 24/03/2024)</strong></p>
+<p><img loading="lazy" src="/img/Dengue_sexo_24.03.2024.png" alt="Distribuição de Óbitos por Faixa Etária e Sexo (Ref. 24/03/2024)"  />
+</p>
+<p>Este segundo gráfico ilustra a distribuição de óbitos por faixa etária e sexo, agora considerando o período que vai desde o início do ano de 2024 até a data de 24 de março de 2024.</p>
+<p>Esses gráficos fornecem insights valiosos sobre a distribuição dos óbitos relacionados à dengue ao longo do tempo, permitindo uma comparação visual entre os dois períodos analisados.</p>
+<hr>
+<h2 id="distribuição-de-óbitos-por-faixa-etária-e-ano">Distribuição de Óbitos por Faixa Etária e Ano<a hidden class="anchor" aria-hidden="true" href="#distribuição-de-óbitos-por-faixa-etária-e-ano">#</a></h2>
+<p>Este código realiza uma análise da distribuição de óbitos por faixa etária e ano, combinando os dados dos anos de 2023 e 2024.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#75715e"># Combinando os dados de óbitos por dengue dos anos de 2023 e 2024</span>
+</span></span><span style="display:flex;"><span>dados_combinados <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">rbind</span>(obtdengue23, obtdengue24)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Convertendo a coluna de idade para o formato numérico</span>
+</span></span><span style="display:flex;"><span>dados_combinados<span style="color:#f92672">$</span>IDADEanos <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">as.numeric</span>(dados_combinados<span style="color:#f92672">$</span>IDADEanos)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Verificando se a conversão foi bem-sucedida</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">str</span>(dados_combinados<span style="color:#f92672">$</span>IDADEanos)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Calculando a faixa etária dos indivíduos</span>
+</span></span><span style="display:flex;"><span>faixa_etaria <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">cut</span>(dados_combinados<span style="color:#f92672">$</span>IDADEanos, breaks <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">40</span>, <span style="color:#ae81ff">50</span>, <span style="color:#ae81ff">60</span>, <span style="color:#ae81ff">70</span>, <span style="color:#ae81ff">80</span>, <span style="color:#ae81ff">90</span>, <span style="color:#66d9ef">Inf</span>), labels <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;0-10&#34;</span>, <span style="color:#e6db74">&#34;11-20&#34;</span>, <span style="color:#e6db74">&#34;21-30&#34;</span>, <span style="color:#e6db74">&#34;31-40&#34;</span>, <span style="color:#e6db74">&#34;41-50&#34;</span>, <span style="color:#e6db74">&#34;51-60&#34;</span>, <span style="color:#e6db74">&#34;61-70&#34;</span>, <span style="color:#e6db74">&#34;71-80&#34;</span>, <span style="color:#e6db74">&#34;81-90&#34;</span>, <span style="color:#e6db74">&#34;91+&#34;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Agrupando os dados por ano e faixa etária e contando o número de óbitos em cada grupo</span>
+</span></span><span style="display:flex;"><span>dados_agrupados <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">table</span>(dados_combinados<span style="color:#f92672">$</span>NU_ANO, faixa_etaria)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Plotando o gráfico de barras</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">barplot</span>(dados_agrupados, beside <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>,
+</span></span><span style="display:flex;"><span>        main <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Distribuição de Óbitos por Faixa Etária e Ano&#34;</span>,
+</span></span><span style="display:flex;"><span>        xlab <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Faixa Etária&#34;</span>,
+</span></span><span style="display:flex;"><span>        ylab <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Número de Óbitos&#34;</span>,
+</span></span><span style="display:flex;"><span>        col <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;cyan&#34;</span>, <span style="color:#e6db74">&#34;darkblue&#34;</span>),
+</span></span><span style="display:flex;"><span>        ylim <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">325</span>),
+</span></span><span style="display:flex;"><span>        axes <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Adicionando os intervalos do eixo y manualmente</span>
+</span></span><span style="display:flex;"><span>intervalos_y <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">seq</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">325</span>, by <span style="color:#f92672">=</span> <span style="color:#ae81ff">25</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">axis</span>(side <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>, at <span style="color:#f92672">=</span> intervalos_y)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Adicionando grid horizontal</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (i <span style="color:#66d9ef">in</span> intervalos_y) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">abline</span>(h <span style="color:#f92672">=</span> i, col <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;gray&#34;</span>, lty <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;dashed&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">box</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Adicionando a legenda</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">legend</span>(<span style="color:#e6db74">&#34;topleft&#34;</span>, legend <span style="color:#f92672">=</span> <span style="color:#a6e22e">rownames</span>(dados_agrupados), fill <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;cyan&#34;</span>, <span style="color:#e6db74">&#34;darkblue&#34;</span>), title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Ano&#34;</span>)
+</span></span></code></pre></div><p>Após combinar os dados dos anos de 2023 e 2024, a coluna de idade é convertida para o formato numérico e, em seguida, é calculada a faixa etária dos indivíduos. Os dados são agrupados por ano e faixa etária, e o número de óbitos em cada grupo é contado. Um gráfico de barras é plotado para visualizar a distribuição de óbitos por faixa etária e ano, com as cores representando os anos correspondentes. A legenda é adicionada para facilitar a interpretação do gráfico.</p>
+<p><strong>Gráfico 3: Distribuição de Óbitos por Faixa Etária e Ano (de 2023 a 24/03/2024)</strong></p>
+<p><img loading="lazy" src="/img/Dengue_ano_2023_a_24.03.2024.png" alt="Distribuição de Óbitos por Faixa Etária e Ano (de 2023 a 24/03/2024)"  />
+</p>
+<hr>
+<h2 id="conclusão">Conclusão<a hidden class="anchor" aria-hidden="true" href="#conclusão">#</a></h2>
+<p>Nesta análise, investigamos a distribuição de óbitos relacionados à dengue nos anos de 2023 e até 24 de março de 2024, considerando faixa etária, ano e sexo. Inicialmente, combinamos os dados de óbitos dos dois anos e realizamos o pré-processamento necessário, incluindo a conversão da coluna de idade para o formato numérico e a criação da faixa etária dos indivíduos.</p>
+<p>Em seguida, agrupamos os dados por ano, sexo e faixa etária, contabilizando o número de óbitos em cada grupo. Essa análise nos permitiu identificar padrões e tendências na distribuição dos óbitos ao longo desses dois períodos, levando em conta a variável de sexo.</p>
+<p>O gráfico resultante ilustra claramente como os óbitos por dengue estão distribuídos entre as diferentes faixas etárias, anos e sexos. Observamos variações significativas na distribuição de óbitos entre os anos de 2023 e 2024, bem como entre os sexos, destacando a importância de uma abordagem diferenciada na prevenção e tratamento da dengue com base nessas características.</p>
+<h2 id="próximos-passos-sugeridos">Próximos Passos Sugeridos<a hidden class="anchor" aria-hidden="true" href="#próximos-passos-sugeridos">#</a></h2>
+<ul>
+<li>
+<p><strong>Análise Temporal por Sexo:</strong> Realizar uma análise mais detalhada da evolução temporal dos óbitos por dengue por sexo ao longo dos anos, identificando possíveis diferenças nas tendências e padrões entre homens e mulheres.</p>
+</li>
+<li>
+<p><strong>Análise Geográfica por Sexo:</strong> Investigar a distribuição geográfica dos óbitos por dengue por sexo para identificar possíveis disparidades regionais e direcionar estratégias de prevenção e controle específicas para cada grupo.</p>
+</li>
+<li>
+<p><strong>Avaliação de Fatores de Risco por Sexo:</strong> Explorar os possíveis fatores de risco associados aos óbitos por dengue por sexo, como comportamentais, biológicos e sociais, para desenvolver intervenções personalizadas e mais eficazes.</p>
+</li>
+<li>
+<p><strong>Implementação de Medidas de Intervenção por Sexo:</strong> Implementar medidas de intervenção direcionadas por sexo, como campanhas de conscientização, programas de vacinação e controle de vetores adaptados às necessidades e características de homens e mulheres.</p>
+</li>
+</ul>
+<p>Esses próximos passos podem proporcionar uma compreensão mais abrangente e detalhada dos padrões de óbitos por dengue por sexo e orientar estratégias mais eficazes para reduzir o impacto da doença na saúde pública.</p>
+<h2 id="referência">Referência<a hidden class="anchor" aria-hidden="true" href="#referência">#</a></h2>
+<blockquote>
+<p>SALDANHA, Raphael de Freitas; BASTOS, Ronaldo Rocha; BARCELLOS, Christovam. Microdatasus: pacote para download e pré-processamento de microdados do Departamento de Informática do SUS (DATASUS). Cad. Saúde Pública, Rio de Janeiro , v. 35, n. 9, e00032419, 2019. Available from <a href="http://ref.scielo.org/dhcq3y">http://ref.scielo.org/dhcq3y</a>.</p>
+</blockquote>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://matheushog.github.io/tags/analysis/">Analysis</a></li>
+      <li><a href="https://matheushog.github.io/tags/r/">R</a></li>
+      <li><a href="https://matheushog.github.io/tags/learning/">Learning</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="https://matheushog.github.io/post/2023/automacao_planner/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Automação da criação de tarefas no Ms Planner</span>
+  </a>
+</nav>
+
+
+<ul class="share-buttons">
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Análise de dados em R on x"
+            href="https://x.com/intent/tweet/?text=An%c3%a1lise%20de%20dados%20em%20R&amp;url=https%3a%2f%2fmatheushog.github.io%2fpost%2f2024%2fanalise_dados_dengue%2f&amp;hashtags=analysis%2cR%2clearning">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Análise de dados em R on linkedin"
+            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fmatheushog.github.io%2fpost%2f2024%2fanalise_dados_dengue%2f&amp;title=An%c3%a1lise%20de%20dados%20em%20R&amp;summary=An%c3%a1lise%20de%20dados%20em%20R&amp;source=https%3a%2f%2fmatheushog.github.io%2fpost%2f2024%2fanalise_dados_dengue%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Análise de dados em R on reddit"
+            href="https://reddit.com/submit?url=https%3a%2f%2fmatheushog.github.io%2fpost%2f2024%2fanalise_dados_dengue%2f&title=An%c3%a1lise%20de%20dados%20em%20R">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Análise de dados em R on facebook"
+            href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fmatheushog.github.io%2fpost%2f2024%2fanalise_dados_dengue%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Análise de dados em R on whatsapp"
+            href="https://api.whatsapp.com/send?text=An%c3%a1lise%20de%20dados%20em%20R%20-%20https%3a%2f%2fmatheushog.github.io%2fpost%2f2024%2fanalise_dados_dengue%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Análise de dados em R on telegram"
+            href="https://telegram.me/share/url?text=An%c3%a1lise%20de%20dados%20em%20R&amp;url=https%3a%2f%2fmatheushog.github.io%2fpost%2f2024%2fanalise_dados_dengue%2f">
+            <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Análise de dados em R on ycombinator"
+            href="https://news.ycombinator.com/submitlink?t=An%c3%a1lise%20de%20dados%20em%20R&u=https%3a%2f%2fmatheushog.github.io%2fpost%2f2024%2fanalise_dados_dengue%2f">
+            <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
+                xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
+                <path
+                    d="M449.446 0C483.971 0 512 28.03 512 62.554L512 449.446C512 483.97 483.97 512 449.446 512L62.554 512C28.03 512 0 483.97 0 449.446L0 62.554C0 28.03 28.029 0 62.554 0L449.446 0ZM183.8767 87.9921H121.8427L230.6673 292.4508V424.0079H281.3328V292.4508L390.1575 87.9921H328.1233L256 238.2489z" />
+            </svg>
+        </a>
+    </li>
+</ul>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://matheushog.github.io/">Matheushog&#39;s site</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

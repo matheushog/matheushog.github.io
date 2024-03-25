@@ -2,37 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://matheushog.github.io/</loc>
-    <lastmod>2023-07-19T14:36:27+01:00</lastmod>
+    <loc>https://matheushog.github.io/post/2024/analise_dados_dengue/</loc>
+    <lastmod>2024-03-25T14:36:27+01:00</lastmod>
   </url><url>
-    <loc>https://matheushog.github.io/post/</loc>
-    <lastmod>2023-07-19T14:36:27+01:00</lastmod>
-  </url><url>
-    <loc>https://matheushog.github.io/post/2023/test/</loc>
-    <lastmod>2023-07-19T14:36:27+01:00</lastmod>
-  </url><url>
-    <loc>https://matheushog.github.io/post/2023/automacao_planner/</loc>
-    <lastmod>2023-01-22T04:40:01+01:00</lastmod>
+    <loc>https://matheushog.github.io/tags/analysis/</loc>
+    <lastmod>2024-03-25T14:36:27+01:00</lastmod>
   </url><url>
     <loc>https://matheushog.github.io/categories/</loc>
-    <lastmod>2023-01-22T04:40:01+01:00</lastmod>
+    <lastmod>2024-03-25T14:36:27+01:00</lastmod>
+  </url><url>
+    <loc>https://matheushog.github.io/categories/data/</loc>
+    <lastmod>2024-03-25T14:36:27+01:00</lastmod>
   </url><url>
     <loc>https://matheushog.github.io/tags/learning/</loc>
+    <lastmod>2024-03-25T14:36:27+01:00</lastmod>
+  </url><url>
+    <loc>https://matheushog.github.io/</loc>
+    <lastmod>2024-03-25T14:36:27+01:00</lastmod>
+  </url><url>
+    <loc>https://matheushog.github.io/post/</loc>
+    <lastmod>2024-03-25T14:36:27+01:00</lastmod>
+  </url><url>
+    <loc>https://matheushog.github.io/tags/r/</loc>
+    <lastmod>2024-03-25T14:36:27+01:00</lastmod>
+  </url><url>
+    <loc>https://matheushog.github.io/tags/</loc>
+    <lastmod>2024-03-25T14:36:27+01:00</lastmod>
+  </url><url>
+    <loc>https://matheushog.github.io/post/2023/automacao_planner/</loc>
     <lastmod>2023-01-22T04:40:01+01:00</lastmod>
   </url><url>
     <loc>https://matheushog.github.io/categories/project/</loc>
     <lastmod>2023-01-22T04:40:01+01:00</lastmod>
   </url><url>
-    <loc>https://matheushog.github.io/tags/</loc>
-    <lastmod>2023-01-22T04:40:01+01:00</lastmod>
-  </url><url>
     <loc>https://matheushog.github.io/post/2023/analise_dados/</loc>
-    <lastmod>2023-01-14T23:06:35+01:00</lastmod>
-  </url><url>
-    <loc>https://matheushog.github.io/tags/analysis/</loc>
-    <lastmod>2023-01-14T23:06:35+01:00</lastmod>
-  </url><url>
-    <loc>https://matheushog.github.io/categories/data/</loc>
     <lastmod>2023-01-14T23:06:35+01:00</lastmod>
   </url><url>
     <loc>https://matheushog.github.io/tags/python/</loc>
